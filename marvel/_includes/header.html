@@ -1,0 +1,73 @@
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ "/" | prepend: site.baseurl }}">Flying Birds Gallery</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li {% if page.title == "Flying Birds Gallery" %} class="active" {% endif %} >
+                        <a href="{{ "/" | prepend: site.baseurl }}">Home</a>
+                    </li>
+                    <li {% if page.title == "About" %} class="active" {% endif %} >
+                        <a href="{{ "/about/" | prepend: site.baseurl }}">About</a>
+                    </li>
+                    <li {% if page.title == "Portfolio" %} class="active" {% endif %} >
+                        <a href="{{ "/portfolio/" | prepend: site.baseurl }}">Portfolio</a>
+                    </li>
+                    <li {% if page.title == "News" %} class="active" {% endif %} >
+                        <a href="{{ "/news/" | prepend: site.baseurl }}">News</a>
+                    </li>
+                    <li {% if page.title == "Contact" %} class="active" {% endif %} >
+                        <a href="{{ "/contact/" | prepend: site.baseurl }}">Contact</a>
+                    </li>
+                </ul>
+                <!-- <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Link</a></li>
+                </ul> -->
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+    <ol class="breadcrumb">
+        {% if page.newsitem == true %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li><a href="{{ "/news" | prepend: site.baseurl }}">News</a></li>
+        <li class="active">News Item</li>
+        {% endif %}
+        {% if page.title == "Flying Birds Gallery" %}
+        <li class="active">Home</li>
+        {% endif %}
+        {% if page.title == "About" %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li class="active">About</li>
+        {% endif %}
+        {% if page.title == "Portfolio" %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li class="active">Portfolio</li>
+        {% endif %}
+        {% if page.title == "News" %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li class="active">News</li>
+        {% endif %}
+        {% if page.title == "Contact" %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li class="active">Contact</li>
+        {% endif %}
+        {% if page.title contains "Item - " %}
+        <li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+        <li><a href="{{ "/portfolio" | prepend: site.baseurl }}">Portfolio</a></li>
+        <li class="active">Item</li>
+        {% endif %}
+    </ol>
+
+</header>
